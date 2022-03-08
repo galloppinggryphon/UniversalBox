@@ -81,9 +81,11 @@ $settings['presets']['colourThemes'] = [
 ```
 
 **Categories**
+
 Themes can be divided into categories or sets using the category key. This is optional.
 
 **Auto class name generation with prefix**
+
 Providing a class name is optional - instead, it can be generated automatically from the slug name and a prefix. E.g. `colour-theme-` + `blue-white` --> `colour-theme-blue-white`. If a class name is provided, it will be used, unprefixed.
 <br>
 ```
@@ -103,8 +105,9 @@ add_theme_support('editor-color-palette', [
     ],
 ]);
 ```
-<br>
+
 **Dynamic colours with custom CSS properties**
+
 Colours don't have to be hard-coded, they can be defined with CSS variables. E.g.: `'color' => 'var(--theme-colour--red)`. or `var(--wp-preset--colour-red)`.
 
 It's important to use a consistent prexix and to register it in the plugin configuration.
@@ -120,7 +123,7 @@ Select an image to use as the background for the block. It is also possible to s
 ### Custom classes and custom CSS
 
 Add custom class names or CSS to both the outer and inner HTML element. Custom CSS also supports responsive settings.
-<br>
+
 ## Navigation and inspection controls
 
 ### Attribute inspector
@@ -155,6 +158,7 @@ Features
 Blocks inside a flex box block behave according to the settings in its parents. In addition, two settings can be configured per-block. Both can be responsive.
 
 **Block order:**
+
 Force block to be rendered before or after adjacent blocks
 
 **Block width:**
@@ -203,12 +207,14 @@ $settings['cssColourVariablePrefix'] = [
 To provide advanced features, Universal Box is composed of two HTML elements, one wrapped inside the other. In effect, settings that modify a UB’s relationship to other blocks are applied to the outer element, while settings that modify its children or its appearance are applied to the inner block.
 
 **Outer block:**
+
 Controls external positioning vis-a-vis adjacent elements. Specifically, margin, alignment and width.
 
 **Inner block:**
+
 Controls the visible portions of the block, internal behaviour/layouts and styling, including margins, padding and background
 
-**Important implications**
+### Important implications
 
 1. Combining margins with alignment (specifically centre, wide and full alignment). Block margins are applied to the inner block in order not to interfere with the behaviour of the box vis-a-vis other elements. Some alignment options (e.g. centre) uses left and right margins.
 2. No collapsing margins. Margins and padding are fixed and entirely predictable by front-end users without a degree in CSS-ology.
@@ -221,9 +227,9 @@ Controls the visible portions of the block, internal behaviour/layouts and styli
 
 Ideally, block styling is done with classes, but sometimes, custom settings are required. These are translated into CSS, which has to be delivered on the front-end. I've experimented with a few options of including that CSS. Inline styling is not workable since the block needs to control CSS options like media queries. Scoped CSS would be ideal, but has no native support. I also tried using the 'meta' attribute option (now deprecated, fortunately!) to save the CSS, along with PHP code to serve the CSS on the front-end, but this became horribly convoluted and complex.
 
-The current solution adds a `script` tag with CSS encoded as `application/json` inside the HTML output. A global script is run in the footer, scans the page for these script tags, and applies the styling. This script <span class="colour" style="color:var(--vscode-unotes-wysText)"><span class="font" style="font-family:var(--vscode-editor-font-family)"><span class="size" style="font-size:1em">is included only when content with Universal Box is detected.</span></span></span>
+The current solution adds a `script` tag with CSS encoded as `application/json` inside the HTML output. A global script is run in the footer, scans the page for these script tags, and applies the styling. This script is included only when content with Universal Box is detected.
 
-<span class="colour" style="color:var(--vscode-unotes-wysText)"><span class="font" style="font-family:var(--vscode-editor-font-family)"><span class="size" style="font-size:1em">In the future, I may include the script as an </span></span></span>immediately invoked function<span class="colour" style="color:var(--vscode-unotes-wysText)"><span class="font" style="font-family:var(--vscode-editor-font-family)"><span class="size" style="font-size:1em"> with each block.</span></span></span>
+In the future, I may include the script as an immediately invoked function with each block.
 
 ## Installation 💾
 
@@ -253,10 +259,11 @@ presets:
 UniversalBox:
     extraClassNames
 ```
-<br>
+
 For details on each, see sections above on block attribute controls.
 
 **UniversalBox configuration**
+
 Configure *additional* class names that are applied to both the inner and outer HTML element:
 <br>
 ```
@@ -275,7 +282,7 @@ Some features require explicit theme support with the WP function `add_theme_sup
 * align-wide
 * editor-color-palette
 
-To learn more about either option, see [https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/).
+To learn more about either option, see [](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/).
 
 ### Theme features (add\_theme\_supports)
 
