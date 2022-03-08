@@ -1,6 +1,6 @@
-![image](ub-banner_sm.png)
-
 # Universal Box - A Wordpress Block
+
+![image](/doc-assets/ub-banner_sm.png)
 
 - - -
 
@@ -26,17 +26,17 @@ Version 3.0 of Universal Box represents an enormous effort to rebuild it from th
 
 ## Features 🛵
 
-🚩 Alignment (float)
-🚩 Text alignment (align)
-🚩 Width (with presets)
-🚩 Margin and padding (with presets)
-🚩 Colour themes (harmonic background and foreground colour)
-🚩 Background colour
-🚩 Background image
-🚩 Responsive control -- control most options for different screen sizes
-🚩 Custom per-block CSS
-🚩 Foreground colour (TODO)
-🚩 Advanced layouts using flex-box (TODO)
+* 🚩 Alignment (float)
+* 🚩 Text alignment (align)
+* 🚩 Width (with presets)
+* 🚩 Margin and padding (with presets)
+* 🚩 Colour themes (harmonic background and foreground colour)
+* 🚩 Background colour
+* 🚩 Background image
+* 🚩 Responsive control -- control most options for different screen sizes
+* 🚩 Custom per-block CSS
+* 🚩 Foreground colour (TODO)
+* 🚩 Advanced layouts using flex-box (TODO)
 
 ## Screenshots
 
@@ -292,7 +292,7 @@ add_action('after_setup_theme', 'theme_setup');
 <br>
 To learn more about either option, see [https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/).
 
-## Planned features 🧩\\\\\\\\\\\\\\s
+## Planned features 🧩
 
 New features or to be ported from version 2.0:
 
@@ -308,5 +308,5 @@ New features or to be ported from version 2.0:
 # License
 
 Author: Bjornar Egede-Nissen
-License: MIT
-[License terms](/LICENSE)
+
+License: MIT ([License terms](/LICENSE))
