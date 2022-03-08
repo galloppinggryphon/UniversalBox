@@ -1,0 +1,75 @@
+.components-button-group {
+	&.has-icons {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: stretch;
+	}
+
+	.components-button {
+
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+
+		&[aria-expanded="true"],
+		&:hover {
+			background-color: hsl(0, 0%, 90%) !important;
+			color: black !important;
+		}
+
+		img {
+			margin-right: 5px;
+		}
+
+		margin-left: 0 !important;
+	}
+
+	button.bb-button-alt {
+		box-shadow: none;
+		padding: 6px;
+		height: unset;
+		margin-right: 3px;
+		margin-bottom: 3px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&:not(.is-pressed) {
+			background-color: hsl(0, 0%, 90%);
+		}
+
+		&.is-pressed {
+			background-color: var(--wp-admin-theme-color);
+			box-shadow: inset 0 0 0 2px #1e1e1e;
+		}
+	}
+
+	button.bb-button-clear {
+		box-shadow: none;
+		padding: 6px;
+		height: unset;
+		margin-right: 3px;
+		margin-bottom: 3px;
+		flex-flow: column;
+		white-space: normal;
+		border-radius: 0;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&:not(.is-pressed) {
+			background-color: white;
+		}
+
+		&.is-pressed {
+			box-shadow: 0 0 0 2px var(--wp-admin-theme-color);
+			//box-shadow: inset 0 0 0 1px hsl(0,0%, 70%);
+			background: hsl(0, 0%, 97%);
+			color: black;
+			//background-color: hsl(0,0%, 70%);
+		}
+	}
+}

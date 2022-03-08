@@ -1,0 +1,36 @@
+// === Text input with apply button ===
+.text-input.components-base-control {
+	.components-panel__row {
+		align-items: flex-start;
+
+		.components-text-control__input,
+		.components-base-control,
+		.components-base-control__field {
+			margin-bottom: 5px;
+		}
+
+		.components-base-control {
+			flex-grow: 1;
+		}
+
+		.components-button {
+			margin-left: 5px;
+			width: 32px;
+			height: 32px;
+			padding: 0;
+			margin-left: 5px;
+		}
+	}
+
+	&.with-button-row {
+		margin-bottom: 0 !important;
+
+		.components-base-control__help {
+			margin-bottom: 0;
+		}
+		.button-row {
+			justify-content: start;
+			margin-bottom: 10px;
+		}
+	}
+}

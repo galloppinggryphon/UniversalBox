@@ -1,0 +1,18 @@
+{
+	"apiVersion": 2,
+	"name": "blocky-blocks/box",
+	"title": "Universal Box",
+	"category": "design",
+	"description": "Advanced layout and content block",
+	"supports": {
+		"html": false,
+		"align": true,
+		"anchor": true,
+		"className": true,
+		"customClassName": false
+	},
+	"textdomain": "box",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

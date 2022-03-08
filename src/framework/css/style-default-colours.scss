@@ -1,0 +1,56 @@
+/**
+ * These colours and colour themes are included for demonstration purposes if no colours are defined by theme
+ */
+
+$themes: (
+	primary,
+	secondary,
+	alternate,
+	neutral-light,
+	neutral-dark,
+	white,
+	black
+);
+
+$colours: (
+	primary: #66dbff,
+	primary--contrast: black,
+	secondary: #ebc247,
+	secondary--contrast: black,
+	alternate: #e76e63,
+	neutral-light: #d0dce2,
+	neutral-light--contrast: #d0dce2,
+	neutral-dark: #27373f,
+	neutral-dark--contrast: #27373f,
+	white: white,
+	white--contrast: #27373f,
+	black: black,
+	black--contrast: #d0dce2,
+);
+
+//Create CSS variables from colours
+:root {
+	@each $colour-name, $colour in $colours {
+		--colour-#{ $colour-name }: #{$colour};
+	}
+}
+
+//Create WP colour classes
+@each $name, $colour in $colours {
+	.has-#{$name}-color {
+		color: var(--colour-#{ $colour-name });
+	}
+
+	.has-#{$name}-background-color {
+		background-color: var(--colour-#{ $colour-name });
+	}
+}
+
+//Create theme classes
+@each $theme-name in $themes {
+	$colour: map-get($colours, $colour-name);
+	.colour-theme-#{ $colour-name } {
+		background-color: var(--colour-#{ $colour-name });
+		color: var(--colour-#{ $colour }-contrast);
+	}
+}

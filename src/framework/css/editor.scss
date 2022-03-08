@@ -1,0 +1,100 @@
+// ##############################
+// ##### Inspector Controls #####
+// ##############################
+
+// ===
+// ~~~  EXPERIMENTAL ~~~
+// ===
+
+//Enable relative sizes with alignment
+//Prevents box from collapsing
+//#todo - belongs in theme
+
+// .wp-block[data-align] {
+// 	max-width: none;
+// }
+
+// ===
+// ~~~ Small fixes ~~~
+// ===
+
+// === Bug that prevents preview image height from expanding ===
+.components-button.editor-post-featured-image__preview {
+	height: auto;
+}
+
+
+// ===
+// ~~~  Improve built-in inspector controls ~~~
+// ===
+
+// === Redefine existing styles ===
+.edit-post-sidebar {
+	.block-editor-url-input input[type="text"] {
+		width: 100%;
+	}
+
+	.components-radio-control__input {
+		width: 18px;
+		height: 18px;
+	}
+
+	input[type="radio"]:checked::before {
+		width: 10px;
+		height: 10px;
+	}
+}
+
+.components-base-control {
+	margin-bottom: 15px;
+}
+.components-base-control__label {
+	width: 100%;
+}
+
+// === Radiocontrols with help text ===
+.components-radio-control__option {
+	label {
+		span:first-child {
+			font-weight: bold;
+		}
+		span:last-child {
+			display: block;
+			margin-left: 26px;
+		}
+	}
+}
+
+.components-select-control__input[multiple] {
+	height: auto !important;
+}
+
+// ===
+// ~~  New inspector components ~~~
+// ===
+
+.block-id-control {
+	.block-id-display {
+		overflow-wrap: anywhere;
+	}
+}
+
+dl.key-value-list {
+	width: 100%;
+	margin: 0;
+	padding-bottom: 5px;
+	display: flex;
+
+	dt {
+		flex: 1;
+		font-weight: 500;
+	}
+
+	dd {
+		flex: 2;
+	}
+}
+
+.select-list {
+	width: 100%;
+}

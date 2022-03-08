@@ -1,0 +1,1 @@
+!function(){"use strict";document.addEventListener("DOMContentLoaded",(function(){const e=document.querySelectorAll("script.blocky-blocks-block-config");e&&e.forEach((e=>{const n=JSON.parse(e.innerHTML);n&&function(e){const n=document.createElement("style");n.innerHTML=e,document.querySelector("head").appendChild(n)}(n.css)}))}))}();

@@ -1,0 +1,37 @@
+{
+	"compilerOptions": {
+		"checkJs": true,
+		"skipLibCheck": false,
+
+		//For the interpreter
+		"lib": ["dom", "dom.iterable", "es2020"],
+
+		//Enable dynamic imports with import()
+		"module": "es2020", //dynamic imports
+
+		//For the interpreter?
+		"target": "es2020",
+
+		// Mimic node.js module resolution
+		"moduleResolution": "node",
+
+		"esModuleInterop": true,
+
+		"jsx": "preserve",
+
+		"baseUrl": "src",
+		"paths": {
+			"@assets/*": ["assets/*"],
+			"@block-controls": ["framework/block-controls/index.js"],
+			"@blocks/*": ["blocks/*"],
+			"@components": ["framework/components/index.js"],
+			"@extensions/*": ["framework/extensions/*"],
+			"@framework/*": ["framework/*"],
+			"@lib/*": ["lib/*"],
+			"~/*": ["./*"]
+		},
+		"strictNullChecks": false
+	},
+	"include": ["src/**/*.js", "src/**/*.ts"],
+	"exclude": ["node_modules", ".temp"]
+}

@@ -1,0 +1,11 @@
+.range-control-reset {
+	display: flex;
+	align-items: center;
+	margin: auto;
+	padding-left: 5px;
+
+	.components-button {
+		padding: 0;
+		height: auto;
+	}
+}

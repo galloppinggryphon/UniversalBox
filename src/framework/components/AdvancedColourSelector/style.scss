@@ -1,0 +1,66 @@
+.advanced-colour-selector {
+	--swatch-width: 60px;
+	--swatch-height: 40px;
+
+	.bottom-padding {
+		padding-bottom: 15px;
+	}
+
+	.colour-indicator-row {
+			display: flex;
+			justify-content:space-between;
+			align-items: center;
+
+			> div {
+				display: flex;
+				justify-content:left;
+				align-items: center;
+			}
+
+		// .component-color-indicator {
+		// 	margin-left: 0;
+		// 	margin-right: 10px;
+		// 	width: 35px;
+		// 	height: 26px;
+		// }
+
+		.component-color-indicator {
+			height: 40px;
+			width: 60px;
+			margin-left: 0;
+			margin-right: 10px;
+			border-radius: 5px;
+			box-shadow: inset 0 0 0 1px rgb(0 0 0 / 20%);
+		}
+	}
+
+	&.large-palette {
+		.components-circular-option-picker__option-wrapper {
+			width: var(--swatch-width);
+			height: var(--swatch-height);
+
+			&::before {
+				content: unset;
+			}
+
+			.components-circular-option-picker__option {
+				border-radius: 5px;
+				box-shadow: inset 0 0 0 100px;
+
+				&::after {
+					border-radius: 5px;
+				}
+
+				&.components-circular-option-picker__option {
+					box-shadow: none;
+
+					&:focus::after {
+						width: auto;
+						height: auto;
+						box-shadow: none;
+					}
+				}
+			}
+		}
+	}
+}

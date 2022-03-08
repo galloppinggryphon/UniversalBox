@@ -1,0 +1,31 @@
+//Fix the too-tall top notice
+.components-notice__content {
+	display: flex;
+	justify-content: space-between;
+
+	.components-button.components-notice__action.is-link {
+		margin: 0;
+	}
+}
+
+.bb-box::before
+{
+	content: "";
+	display: flow-root;
+	position: absolute;
+	top: 1px;
+	bottom: 1px;
+	left: 1px;
+	right: 1px;
+	z-index: 1;
+	pointer-events: none;
+	// transition: outline 0.1s linear; //, border-style .1s linear,box-shadow .1s linear;
+	outline: 1px solid transparent;
+}
+
+//Permanent box outlines
+.bb-box::before {
+	box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
+	outline: dotted 1px rgba(117, 117, 117, 0.5);
+	// outline-offset: -1px;
+}

@@ -1,0 +1,14 @@
+.bb-box {
+	display: flow-root;
+	margin: 0 !important;
+}
+
+.bb-box-inner {
+	width: 100%;
+	height: 100%;
+	max-height: inherit;
+}
+
+.background-padding {
+	padding: 20px;
+}

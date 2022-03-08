@@ -1,0 +1,182 @@
+.inspector-panel {
+	&.inspector-panel--top-panel {
+		$top-panel: (
+			colour: transparent,
+			border-colour: #dcdcde,
+			foreground-colour: black,
+			active-colour: #f0f0f0,
+			active-foreground-colour: black,
+			focus: var(--wp-admin-theme-color),
+		);
+
+		$top-panel-open: (
+			colour: transparent,
+			border-colour: #f0f0f0,
+			foreground-colour: black,
+			active-colour: #f0f0f0,
+			active-foreground-colour: black,
+			focus: var(--wp-admin-theme-color),
+		);
+
+		@each $key, $value in $top-panel {
+			--inspector-panel-#{$key}: #{$value};
+		}
+		@each $key, $value in $top-panel-open {
+			--inspector-panel-open-#{$key}: #{$value};
+		}
+	}
+
+	&.inspector-panel--sub-panel {
+		$sub-panel: (
+			colour: #dcdcde,
+			border-colour: #dcdcde,
+			foreground-colour: black,
+			active-colour: black,
+			active-foreground-colour: yellow,
+		);
+
+		$sub-panel-open: (
+			colour: #f5e6ab,
+			border-colour: #f5e6ab,
+			foreground-colour: black,
+			active-colour: #f0c33c,
+			active-foreground-colour: yellow,
+		);
+
+		@each $key, $value in $sub-panel {
+			--inspector-panel-#{$key}: #{$value};
+		}
+		@each $key, $value in $sub-panel-open {
+			--inspector-panel-open-#{$key}: #{$value};
+		}
+	}
+
+	max-width: 278px;
+	margin: 0;
+
+	& > .inspector-panel-header {
+		margin: 0;
+
+		.inspector-panel-toggle {
+			display: inline-flex;
+			width: 100%;
+			height: auto;
+			// line-height: 24px;
+			font-weight: 500;
+			background-color: var(--inspector-panel-colour);
+			color: var(--inspector-panel-foreground-colour);
+			transition: all 100ms ease-in-out;
+
+			&:hover,
+			&:focus {
+				//box-shadow: none !important;
+			}
+
+			&:focus {
+				box-shadow: inset 0 0 0 var(--wp-admin-border-width-focus)
+					var(--wp-admin-theme-color);
+			}
+
+			&:hover {
+				background-color: var(--inspector-panel-active-colour);
+				color: var(--inspector-panel-active-foreground-colour);
+				// transition: all 100ms ease-in;
+			}
+
+			// &:focus {
+			// 	background-color: var(--inspector-panel-focus-colour) !important;
+			// 	color: var(--inspector-panel-foreground-focus-colour) !important;
+			// 	box-shadow: none !important;
+			// 	transition: all 100ms;
+			// }
+		}
+
+		.dashicon {
+			font-size: 25px;
+			width: 25px;
+			height: 25px;
+			color: grey;
+			margin-right: 5px;
+		}
+
+		svg {
+			height: 24px;
+			width: 24px;
+		}
+	}
+
+	&.is-opened {
+		--inspector-panel-colour: var(--inspector-panel-open-colour);
+		--inspector-panel-foreground-colour: var(
+			--inspector-panel-open-foreground-colour
+		);
+		--inspector-panel-active-colour: var(--inspector-panel-open-active-colour);
+		--inspector-panel-active-foreground-colour: var(
+			--inspector-panel-open-active-foreground-colour
+		);
+
+		margin-bottom: 10px;
+	}
+
+	&.inspector-panel--top-panel {
+		// @at-root &:last-child {
+		// 	border-bottom: 1px solid var(--inspector-panel-border-colour);
+		// }
+
+		& > .inspector-panel-header {
+			.inspector-panel-toggle {
+				padding: 11px 5px;
+				border-top: 1px solid var(--inspector-panel-border-colour);
+				border-radius: 0;
+			}
+		}
+
+		& > .inspector-panel-body {
+			padding: 10px;
+		}
+	}
+
+	&.inspector-panel--sub-panel {
+		.inspector-panel-body {
+			padding: 2px;
+			outline: solid 0 none;
+			outline-offset: 5px;
+		}
+
+		& > .inspector-panel-header > .inspector-panel-toggle {
+			padding: 5px;
+		}
+
+		& > .inspector-panel-body {
+			outline: solid 2px var(--inspector-panel-colour);
+			padding-bottom: 7px;
+			padding-top: 7px;
+			margin-top: 6px;
+		}
+
+		&.is-opened {
+			& > .inspector-panel-header {
+				margin: 0 -7px;
+
+				.inspector-panel-toggle {
+					padding: 5px 12px;
+				}
+
+				// Deeply nested
+				.inspector-panel.is-opened {
+					& > h3 {
+						margin: 0 -2px;
+					}
+					& > h3 > button {
+						padding: 5px;
+					}
+					.inspector-panel-body {
+						outline-offset: 0;
+						margin-top: 0;
+						padding: 5px;
+					}
+				}
+			}
+		}
+	}
+}
